@@ -1,0 +1,10 @@
+@extends('layouts.app')
+@section('content')
+    <!--================Home Banner Area =================-->
+    @include('partials.welcome._banner')
+    <!--================End Home Banner Area =================-->
+
+    <!--================ Start Frequently Asked Questions Area ================-->
+    @include('partials.welcome._frequently_area')
+    <!--================ End Frequently Asked Questions Area ================-->
+@endsection
