@@ -1,5 +1,3 @@
 (function ($) {
-    setTimeout(function () {
-        $('.loader').fadeOut()
-    }, 500)
+    $('.loader').fadeOut()
 })(jQuery)
