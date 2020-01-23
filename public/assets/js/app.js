@@ -20301,7 +20301,7 @@ jQuery('.navbar-toggler').click(function () {
 (function ($) {
     setTimeout(function () {
         $('.loader').fadeOut()
-    }, 1500)
+    }, 500)
 })(jQuery)
 },{}],9:[function(require,module,exports){
 window.jQuery = require('jquery')
