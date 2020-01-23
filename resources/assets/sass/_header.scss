@@ -11,6 +11,9 @@
             font-family: 'Shrikhand', cursive;
             font-size: 40px;
             color: #a4ffb0;
+            @media only screen and (max-width: 991px) {
+                margin-top: 6px;
+            }
         }
     }
     .menu_nav {
