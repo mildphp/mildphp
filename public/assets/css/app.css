@@ -11850,8 +11850,7 @@ h6 {
     border-radius: 0px;
     padding: 0px;
     cursor: pointer;
-    z-index: 999999;
-    margin-bottom: 1.5px; }
+    z-index: 999999; }
   .navbar-toggler-fixed {
     position: fixed;
     right: 0;
