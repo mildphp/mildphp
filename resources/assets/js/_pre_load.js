@@ -1,3 +1,3 @@
-jQuery(window).load(function () {
-    $('.loader').fadeOut()
+jQuery(window).on('load', function () {
+    jQuery('.loader').fadeOut()
 })

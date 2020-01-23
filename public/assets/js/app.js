@@ -20298,8 +20298,8 @@ jQuery('.navbar-toggler').click(function () {
     }
 })(jQuery)
 },{}],8:[function(require,module,exports){
-jQuery(window).load(function () {
-    $('.loader').fadeOut()
+jQuery(window).on('load', function () {
+    jQuery('.loader').fadeOut()
 })
 },{}],9:[function(require,module,exports){
 window.jQuery = require('jquery')
