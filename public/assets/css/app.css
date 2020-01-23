@@ -5,7 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:600,700|Roboto:400,500,500i");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:600,700|Roboto:400,500,500i|Shrikhand");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8913,6 +8913,10 @@ img {
   z-index: 9999; }
   .header_area .navbar-brand {
     margin-right: 30px; }
+    .header_area .navbar-brand h1 {
+      font-family: 'Shrikhand', cursive;
+      font-size: 40px;
+      color: #a4ffb0; }
   .header_area .menu_nav {
     width: 100%; }
   .header_area .navbar {
@@ -11961,7 +11965,6 @@ h6 {
   /* End End Footer Area css
 	============================================================================================ */
   .home_banner_area .banner_inner .home_left_img {
-    padding-bottom: 0;
     text-align: center; }
   .header_area .navbar .primary_btn {
     display: none; }
