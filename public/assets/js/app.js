@@ -20298,11 +20298,18 @@ jQuery('.navbar-toggler').click(function () {
     }
 })(jQuery)
 },{}],8:[function(require,module,exports){
+(function ($) {
+    setTimeout(function () {
+        $('.loader').fadeOut()
+    }, 1500)
+})(jQuery)
+},{}],9:[function(require,module,exports){
 window.jQuery = require('jquery')
 require('popper.js')
 require('bootstrap')
 require('owl.carousel')
+require('./_pre_load')
 require('./_owl.carousel')
 require('./_back_to_top')
 require('./_nav_menu')
-},{"./_back_to_top":5,"./_nav_menu":6,"./_owl.carousel":7,"bootstrap":1,"jquery":2,"owl.carousel":3,"popper.js":4}]},{},[8])
+},{"./_back_to_top":5,"./_nav_menu":6,"./_owl.carousel":7,"./_pre_load":8,"bootstrap":1,"jquery":2,"owl.carousel":3,"popper.js":4}]},{},[9])
