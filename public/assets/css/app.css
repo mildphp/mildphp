@@ -11852,7 +11852,6 @@ h6 {
     z-index: 999999; }
   .navbar-toggler-fixed {
     position: fixed;
-    top: 0;
     right: 0;
     margin-right: 15px; }
   .icon-bar {
