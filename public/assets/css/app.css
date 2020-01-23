@@ -11321,7 +11321,7 @@ h6 {
 
 .loader {
   position: fixed;
-  z-index: 99999;
+  z-index: 999999999;
   overflow-x: hidden;
   overflow-y: hidden;
   background: #ffffff;

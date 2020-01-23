@@ -1473,7 +1473,7 @@ h6 {
 
 .loader {
   position: fixed;
-  z-index: 99999;
+  z-index: 999999999;
   overflow-x: hidden;
   overflow-y: hidden;
   background: #ffffff;
@@ -1484,7 +1484,6 @@ h6 {
 .spinner {
   width: 40px;
   height: 40px;
-
   position: relative;
   margin: auto;
   top: 40%;
