@@ -20298,11 +20298,9 @@ jQuery('.navbar-toggler').click(function () {
     }
 })(jQuery)
 },{}],8:[function(require,module,exports){
-(function ($) {
-    setTimeout(function () {
-        $('.loader').fadeOut()
-    }, 1000)
-})(jQuery)
+jQuery(window).load(function () {
+    $('.loader').fadeOut()
+})
 },{}],9:[function(require,module,exports){
 window.jQuery = require('jquery')
 require('popper.js')
