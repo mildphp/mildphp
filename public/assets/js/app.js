@@ -20299,7 +20299,9 @@ jQuery('.navbar-toggler').click(function () {
 })(jQuery)
 },{}],8:[function(require,module,exports){
 jQuery(window).on('load', function () {
-    jQuery('.loader').fadeOut()
+    setTimeout(function () {
+        jQuery('.loader').fadeOut()
+    }, 1000)
 })
 },{}],9:[function(require,module,exports){
 window.jQuery = require('jquery')
