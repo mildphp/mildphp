@@ -1,5 +1,17 @@
 <?php
 
 return [
-    'documentation' => 'Dokumentasi'
+    'home' => 'Beranda',
+    'about' => 'Tentang Mild',
+    'contact' => 'Kontak',
+    'documentation' => 'Dokumentasi',
+    'login' => 'Masuk',
+    'repository' => 'Repositori',
+    'page' => [
+        'documentation' => [
+            'index' => [
+                'banner_slogan' => 'Mari budayakan membaca sehingga membaca menjadi kebiasaan, Apa gunananya anda jika tidak membaca? Semoga anda terbantu dengan adanya dokumentasi ini.'
+            ]
+        ]
+    ]
 ];

@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Version;
 use Mild\Support\ServiceProvider;
-use Mild\Support\Events\LocaleUpdated;
-use Mild\Contract\Event\EventDispatcherInterface;
+use Mild\Support\Facades\ViewVariable;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,10 +18,10 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * @return void
+     * @throws \Mild\Contract\Database\Exceptions\CompilerExceptionInterface
      */
     public function boot()
     {
-        //
+        ViewVariable::set('version', Version::current());
     }
 }

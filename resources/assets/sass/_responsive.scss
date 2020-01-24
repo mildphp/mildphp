@@ -462,6 +462,9 @@
 	.banner_inner_mt_5_col_lg_6 {
 		margin-top: 35px;
 	}
+	.desktop-only {
+		display: none !important;
+	}
 }
 
 @media only screen and (min-width: 992px) {
@@ -470,6 +473,9 @@
 	}
 	.header_area .navbar {
 		padding: 10px 0 0 0;
+	}
+	.mobile-only {
+		display: none !important;
 	}
 }
 

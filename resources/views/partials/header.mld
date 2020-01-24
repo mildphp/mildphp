@@ -14,15 +14,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav justify-content-center">
-                        <li class="nav-item active"><a class="nav-link" href="{{ url()->getUri() }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item" data-active="home"><a class="nav-link" href="{{ url()->getUri() }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">{{ trans('header.about') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">{{ trans('header.contact') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/mildphp/mild">{{ trans('header.repository') }}</a></li>
+                        <li class="nav-item" data-active="documentation"><a class="nav-link" href="{{ route('docs', $version->name) }}">{{ trans('header.documentation') }}</a></li>
+                        <li class="mobile-only nav-item"><a href="{{ route('login') }}" class="nav-link">{{ trans('header.login') }}</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#" class="primary_btn">{{ trans('header.documentation') }}</a></li>
+                        <li class="nav-item"><a href="{{ route('login') }}" class="primary_btn">{{ trans('header.login') }}</a></li>
                     </ul>
                 </div>
             </div>

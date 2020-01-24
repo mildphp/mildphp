@@ -12,7 +12,10 @@
     "autoload" : {
         "psr-4": {
             "App\\"  : "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "require": {
         "mild/framework": "^1.0.0"

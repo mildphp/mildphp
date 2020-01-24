@@ -1,0 +1,20 @@
+@extends('layouts.doc')
+@section('_banner_content')
+    <h2>{{ trans('header.documentation') }}</h2>
+    <p class="text-white font-italic mt-3">"{{ trans('header.page.documentation.index.banner_slogan') }}"</p>
+@endsection
+@section('_content')
+<section class="docs_list mt-5 mb-3">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4>Pre-Install</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+@endsection

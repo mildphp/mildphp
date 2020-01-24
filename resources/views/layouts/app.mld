@@ -8,7 +8,7 @@
     <title>{{ app()->getName() }}</title>
     <link rel="stylesheet" href="{{ asset_url('css/app.css') }}">
 </head>
-<body>
+<body data-page="@yield('body_page', 'home')">
     <div class="loader">
         <div class="spinner">
             <div class="double-bounce1"></div>

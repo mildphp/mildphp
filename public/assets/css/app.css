@@ -8916,6 +8916,7 @@ img {
     .header_area .navbar-brand h1 {
       font-family: 'Shrikhand', cursive;
       font-size: 40px;
+      font-weight: 400;
       color: #a4ffb0; }
       @media only screen and (max-width: 991px) {
         .header_area .navbar-brand h1 {
@@ -12130,13 +12131,17 @@ h6 {
 
 @media only screen and (max-width: 991px) {
   .banner_inner_mt_5_col_lg_6 {
-    margin-top: 35px; } }
+    margin-top: 35px; }
+  .desktop-only {
+    display: none !important; } }
 
 @media only screen and (min-width: 992px) {
   .banner_content {
     margin-left: 70px; }
   .header_area .navbar {
-    padding: 10px 0 0 0; } }
+    padding: 10px 0 0 0; }
+  .mobile-only {
+    display: none !important; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .section_gap {
@@ -12446,3 +12451,19 @@ h6 {
 
 /* End Footer Area css
 ============================================================================================ */
+body[data-page="documentation"] .banner_area .banner_content p {
+  font-size: 16px; }
+
+body[data-page="documentation"] .docs_list .card {
+  border: 2px solid #3b328a;
+  border-radius: 10px; }
+  body[data-page="documentation"] .docs_list .card .card-body h4 {
+    color: #3b328a;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Shrikhand', cursive; }
+    @media screen and (min-width: 992px) {
+      body[data-page="documentation"] .docs_list .card .card-body h4 {
+        line-height: 4; } }
+  body[data-page="documentation"] .docs_list .card:hover {
+    cursor: pointer; }

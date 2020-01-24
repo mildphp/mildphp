@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\Localization;
 use Mild\Support\Facades\Route;
 use Mild\Session\StartSessionMiddleware;
 use App\Http\Middleware\CookieMiddleware;
 use Mild\Http\ValidatePostSizeMiddleware;
 use App\Http\Middleware\CsrfTokenMiddleware;
 use Mild\View\ShareErrorsFromFlashMiddleware;
+use App\Http\Middleware\LocalizationMiddleware;
 use Mild\Routing\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
@@ -27,7 +29,8 @@ class RouteServiceProvider extends ServiceProvider
         StartSessionMiddleware::class,
         ValidatePostSizeMiddleware::class,
         CsrfTokenMiddleware::class,
-        ShareErrorsFromFlashMiddleware::class
+        ShareErrorsFromFlashMiddleware::class,
+        LocalizationMiddleware::class
     ];
 
     /**
@@ -49,7 +52,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function webRoute()
     {
-        Route::namespace($this->namespace)->middleware($this->webMiddleware)
+        Route::prefix(Localization::getLocaleFromRequest($this->application->request))->namespace($this->namespace)->middleware($this->webMiddleware)
             ->group(path('routes/web.php'));
     }
 
@@ -58,7 +61,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function apiRoute()
     {
-        Route::namespace($this->namespace)->prefix('api')
+        Route::prefix('api')->namespace($this->namespace)
             ->middleware($this->apiMiddleware)
             ->group(path('routes/api.php'));
     }

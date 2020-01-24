@@ -18,8 +18,8 @@ return [
 
     'frequently_area' => [
         'main_title' => [
-            'h2' => 'Pertanyaan Mendasar',
-            'h1' => 'Pertanyaan Mendasar'
+            'h2' => 'Pertanyaan Dasar',
+            'h1' => 'Pertanyaan Dasar'
         ]
     ]
 ];

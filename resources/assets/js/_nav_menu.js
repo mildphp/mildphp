@@ -8,3 +8,14 @@ jQuery('.navbar-toggler').click(function () {
         $this.removeClass('navbar-toggler-fixed')
     }
 })
+
+var _bodyPage = jQuery('body').data('page')
+
+// Set active menu
+jQuery('.nav-item').toArray().forEach(function (el) {
+    var _navItem = jQuery(el)
+
+    if (_navItem.data('active') === _bodyPage) {
+        _navItem.addClass('active')
+    }
+})

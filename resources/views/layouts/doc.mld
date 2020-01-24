@@ -1,0 +1,14 @@
+@extends('layouts.app')
+@section('body_page', 'documentation')
+@section('content')
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    @yield('_banner_content')
+                </div>
+            </div>
+        </div>
+    </section>
+    @yield('_content')
+@endsection

@@ -1,0 +1,4 @@
+@extends('layouts.doc')
+@section('_banner_content')
+
+@endsection
