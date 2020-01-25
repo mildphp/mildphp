@@ -1474,8 +1474,7 @@ h6 {
 .loader {
   position: fixed;
   z-index: 999999999;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   background: #ffffff;
   height: 100%;
   width: 100%;
@@ -1537,7 +1536,7 @@ h6 {
   background: -o-linear-gradient(to right, #3e3590 0%, #231a60 100%);
   background: linear-gradient(to right, #3e3590 0%, #231a60 100%);
   transition: 0.5ms;
-  overflow: hidden;
+  overflow-x: hidden;
   &.show {
     height: 100%;
   }
