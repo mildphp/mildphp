@@ -1,3 +1,0 @@
-@extends('layouts.app')
-@section('title', '419 Authentication Timeout')
-@section('message', '419')

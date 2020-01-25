@@ -1,3 +1,0 @@
-@extends('layouts.app')
-@section('title', '413 Request Entity Too Large')
-@section('message', '413')
