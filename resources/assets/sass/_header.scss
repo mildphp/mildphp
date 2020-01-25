@@ -11,9 +11,8 @@
             font-family: 'Shrikhand', cursive;
             font-size: 40px;
             font-weight: 400;
-            color: #a4ffb0;
+            color: #ffffff;
             @media only screen and (max-width: 991px) {
-                color: #ffffff;
                 margin-top: 10px;
             }
         }
@@ -210,6 +209,7 @@
             min-width: 135px;
             text-transform: uppercase;
             border-radius: 50px;
+            color: #222 !important;
             line-height: 40px;
         }
     }
