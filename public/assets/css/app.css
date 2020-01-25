@@ -11370,6 +11370,97 @@ h6 {
     transform: scale(1);
     -webkit-transform: scale(1); } }
 
+.login-popup {
+  position: fixed;
+  z-index: 99999;
+  height: 0;
+  width: 100%;
+  background: -webkit-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: -moz-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: -o-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  transition: 0.5ms;
+  overflow: hidden; }
+  .login-popup.show {
+    height: 100%; }
+  .login-popup .container {
+    position: relative;
+    top: 15%; }
+    .login-popup .container h4.form-title {
+      font-family: 'Shrikhand', cursive;
+      color: #fff;
+      font-weight: 400;
+      font-size: 30px; }
+    .login-popup .container form {
+      margin-top: 3rem; }
+      @media screen and (min-width: 992px) {
+        .login-popup .container form .form-group {
+          margin-left: 24%; } }
+      .login-popup .container form .form-group .password-eye {
+        position: absolute;
+        right: 0;
+        margin-right: 17.5px;
+        color: #fff;
+        top: 5%; }
+        .login-popup .container form .form-group .password-eye .show_hide_pass {
+          cursor: pointer; }
+      .login-popup .container form .form-group input {
+        background: transparent;
+        width: 100%;
+        border: 0;
+        color: #d7d7d7;
+        outline: none;
+        border-bottom: 1px solid #d7d7d7;
+        border-radius: 0; }
+        .login-popup .container form .form-group input:focus {
+          outline: none;
+          -webkit-appearance: none;
+          box-shadow: none !important; }
+      .login-popup .container form .form-group input::placeholder {
+        color: #d7d7d7; }
+      .login-popup .container form .form-group input::-ms-input-placeholder {
+        color: #d7d7d7; }
+      .login-popup .container form .form-group input:-ms-input-placeholder {
+        color: #d7d7d7; }
+      .login-popup .container form .form-group .submit_btn {
+        border-radius: 50px;
+        margin-top: 23px;
+        font-weight: 700;
+        padding: 22px;
+        line-height: 0;
+        color: #372e84;
+        background: #ffffff; }
+        .login-popup .container form .form-group .submit_btn:hover {
+          color: #372e84; }
+  .login-popup .close-popup {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    line-height: 1;
+    top: 4.2%; }
+    .login-popup .close-popup .close-popup-btn {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      margin: auto;
+      margin-bottom: 4px;
+      transition: all 400ms linear;
+      cursor: pointer; }
+    .login-popup .close-popup .close-popup-btn:first-child {
+      transform: rotate(-45deg);
+      position: relative;
+      top: 7.5px; }
+    .login-popup .close-popup .close-popup-btn:last-child {
+      transform: rotate(45deg);
+      bottom: 6px;
+      position: relative; }
+    .login-popup .close-popup .close-popup-btn:nth-child(2) {
+      width: 0; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
 /* Start About Us Area css
 ============================================================================================ */
 .about_us_area {
@@ -11913,7 +12004,7 @@ h6 {
     background: -moz-linear-gradient(to right, #3e3590 0%, #231a60 100%);
     background: -o-linear-gradient(to right, #3e3590 0%, #231a60 100%);
     background: linear-gradient(to right, #3e3590 0%, #231a60 100%);
-    overflow-x: hidden;
+    overflow: hidden;
     transition: 0.15s; }
     .header_area .navbar-collapse.show {
       width: 100%; }

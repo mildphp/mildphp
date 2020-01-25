@@ -1526,3 +1526,116 @@ h6 {
       -webkit-transform: scale(1.0);
     }
 }
+
+.login-popup {
+  position: fixed;
+  z-index: 99999;
+  height: 0;
+  width: 100%;
+  background: -webkit-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: -moz-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: -o-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  background: linear-gradient(to right, #3e3590 0%, #231a60 100%);
+  transition: 0.5ms;
+  overflow: hidden;
+  &.show {
+    height: 100%;
+  }
+  .container {
+    position: relative;
+    top: 15%;
+    h4.form-title {
+      font-family: 'Shrikhand', cursive;
+      color: #fff;
+      font-weight: 400;
+      font-size: 30px;
+    }
+    form {
+      margin-top: 3rem;
+      .form-group {
+        @media screen and (min-width: 992px) {
+          margin-left: 24%;
+        }
+        .password-eye {
+          position: absolute;
+          right: 0;
+          margin-right: 17.5px;
+          color: #fff;
+          top: 5%;
+          .show_hide_pass {
+            cursor: pointer;
+          }
+        }
+        input {
+          background: transparent;
+          width: 100%;
+          border: 0;
+          color: #d7d7d7;
+          outline: none;
+          border-bottom: 1px solid #d7d7d7;
+          border-radius: 0;
+          &:focus {
+            outline: none;
+            -webkit-appearance:none;
+            box-shadow: none !important;
+          }
+        }
+        input::placeholder {
+          color: #d7d7d7;
+        }
+        input::-ms-input-placeholder {
+          color: #d7d7d7
+        }
+        input:-ms-input-placeholder {
+          color: #d7d7d7
+        }
+        .submit_btn {
+          border-radius: 50px;
+          margin-top: 23px;
+          font-weight: 700;
+          padding: 22px;
+          line-height: 0;
+          color: #372e84;
+          background: #ffffff;
+          &:hover {
+            color: #372e84;
+          }
+        }
+      }
+    }
+  }
+  .close-popup {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    line-height: 1;
+    top: 4.2%;
+    .close-popup-btn  {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      margin: auto;
+      margin-bottom: 4px;
+      transition: all 400ms linear;
+      cursor: pointer;
+    }
+    .close-popup-btn:first-child {
+      transform: rotate(-45deg);
+      position: relative;
+      top: 7.5px;
+    }
+    .close-popup-btn:last-child {
+      transform: rotate(45deg);
+      bottom: 6px;
+      position: relative;
+    }
+    .close-popup-btn:nth-child(2) {
+      width: 0;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

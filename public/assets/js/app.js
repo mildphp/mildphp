@@ -20244,6 +20244,26 @@ return Popper;
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],5:[function(require,module,exports){
 (function ($) {
+    $('.login-popup-link').click(function () {
+        $('.login-popup').addClass('show')
+    })
+    $('.close-popup').click(function () {
+        $('.login-popup').removeClass('show')
+    })
+    $('.show_hide_pass').click(function () {
+        var $this = $(this)
+        var $pass = $this.parent().next()
+        if ($pass.attr('type') === 'password') {
+            $this.attr('class', 'fa fa-eye-slash show_hide_pass')
+            $pass.attr('type', 'text')
+        } else {
+            $this.attr('class', 'fa fa-eye show_hide_pass')
+            $pass.attr('type', 'password')
+        }
+    })
+})(jQuery)
+},{}],6:[function(require,module,exports){
+(function ($) {
     var topEl = $('.back-to-top')
     var offsetEl = $('.back-to-top-offset')
 
@@ -20262,7 +20282,7 @@ return Popper;
         })
     }
 })(jQuery)
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 jQuery('.navbar-toggler').click(function () {
     var $this = jQuery(this)
     if ($this.attr('aria-expanded') == 'false') {
@@ -20284,7 +20304,7 @@ jQuery('.nav-item').toArray().forEach(function (el) {
         _navItem.addClass('active')
     }
 })
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function ($) {
     var owlCarouselEl = $('.owl-carousel')
 
@@ -20308,13 +20328,13 @@ jQuery('.nav-item').toArray().forEach(function (el) {
         })
     }
 })(jQuery)
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 jQuery(window).on('load', function () {
     setTimeout(function () {
         jQuery('.loader').fadeOut()
     }, 1000)
 })
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 window.jQuery = require('jquery')
 require('popper.js')
 require('bootstrap')
@@ -20323,4 +20343,5 @@ require('./_pre_load')
 require('./_owl.carousel')
 require('./_back_to_top')
 require('./_nav_menu')
-},{"./_back_to_top":5,"./_nav_menu":6,"./_owl.carousel":7,"./_pre_load":8,"bootstrap":1,"jquery":2,"owl.carousel":3,"popper.js":4}]},{},[9])
+require('./_auth_popup')
+},{"./_auth_popup":5,"./_back_to_top":6,"./_nav_menu":7,"./_owl.carousel":8,"./_pre_load":9,"bootstrap":1,"jquery":2,"owl.carousel":3,"popper.js":4}]},{},[10])
