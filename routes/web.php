@@ -11,14 +11,18 @@
 |
 */
 
+use Mild\Http\ServerRequest;
 use App\Http\Middleware\DocsRedirectToCurrentVersionMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::post('/login', function (ServerRequest $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
 })->name('login');
 
 Route::prefix('/docs/{version?}')->middleware(DocsRedirectToCurrentVersionMiddleware::class)->group(function ($route) {

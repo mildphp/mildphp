@@ -1572,12 +1572,18 @@ h6 {
           color: #d7d7d7;
           outline: none;
           border-bottom: 1px solid #d7d7d7;
+          &.is-invalid {
+            border-bottom: 1px solid #dc3545;
+          }
           border-radius: 0;
           &:focus {
             outline: none;
             -webkit-appearance:none;
             box-shadow: none !important;
           }
+          -webkit-text-fill-color: #d7d7d7;
+          -webkit-transition: background-color 5000s ease-in-out 0s!important;
+          transition: background-color 5000s ease-in-out 0s!important;
         }
         input::placeholder {
           color: #d7d7d7;
