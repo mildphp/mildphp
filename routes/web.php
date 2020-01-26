@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::post('/login', function (ServerRequest $request) {
     $request->validate([
-        'email' => 'required|email',
+        'email' => 'required|email|exists:users',
         'password' => 'required'
     ]);
 })->name('login');
