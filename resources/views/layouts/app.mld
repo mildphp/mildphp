@@ -15,41 +15,9 @@
             <div class="double-bounce2"></div>
         </div>
     </div>
-    <div class="login-popup@if($__error->validation->count()) show@endif">
-        <div class="close-popup">
-            <span class="close-popup-btn"></span>
-            <span class="close-popup-btn"></span>
-            <span class="close-popup-btn"></span>
-        </div>
-        <div class="container">
-            <h4 class="form-title text-center">{{ trans('auth.login.title') }}</h4>
-            <form method="post" action="{{ route('login') }}">
-                @csrf
-                <div class="form-group col-lg-6">
-                    <input type="text" name="email" class="form-control@if(($error = $__error->validation->has('email'))) is-invalid@endif" placeholder="Email" value="{{ old('email') }}">
-                    @if($error)
-                        <div class="invalid-feedback">
-                            <strong>{{ $__error->validation->first('email') }}</strong>
-                        </div>
-                    @endif
-                </div>
-                <div class="form-group col-lg-6">
-                    <div class="password-eye">
-                        <span class="fa fa-eye show_hide_pass"></span>
-                    </div>
-                    <input type="password" name="password" class="form-control@if(($error = $__error->validation->has('password'))) is-invalid@endif" placeholder="Password">
-                    @if($error)
-                        <div class="invalid-feedback">
-                            <strong>{{ $__error->validation->first('password') }}</strong>
-                        </div>
-                    @endif
-                </div>
-                <div class="form-group col-lg-6">
-                    <button type="submit" class="btn btn-outline-light form-control submit_btn">LOG IN</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    @if(!$user)
+        @include('partials.popup._auth')
+    @endif
     @include('partials.header')
     @yield('content')
     @include('partials.footer')

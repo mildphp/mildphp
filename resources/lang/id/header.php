@@ -6,6 +6,7 @@ return [
     'contact' => 'Kontak',
     'documentation' => 'Dokumentasi',
     'login' => 'Masuk',
+    'logout' => 'Keluar',
     'repository' => 'Repositori',
     'page' => [
         'documentation' => [

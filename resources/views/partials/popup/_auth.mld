@@ -1,0 +1,66 @@
+<div class="login-popup@if($__error->validation->count()) show@endif">
+    <div class="close-popup">
+        <span class="close-popup-btn"></span>
+        <span class="close-popup-btn"></span>
+        <span class="close-popup-btn"></span>
+    </div>
+    <div class="container">
+        {{--    start section login    --}}
+        <div class="section-login@if(old('forgot_form')) d-none@endif">
+            <h4 class="form-title text-center">{{ trans('auth.login.title') }}</h4>
+            <form method="post" action="{{ route('login') }}">
+                <input type="hidden" name="login_form" value="1">
+                @csrf
+                <div class="form-group col-lg-6">
+                    <input type="text" name="email" class="form-control@if(($error = $__error->validation->has('email') && old('login_form'))) is-invalid@endif" placeholder="{{ trans('auth.field.email') }}" value="{{ old('login_form') ? old('email') : '' }}">
+                    @if($error)
+                        <div class="invalid-feedback">
+                            <strong>{{ $__error->validation->first('email') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group col-lg-6">
+                    <div class="password-eye">
+                        <span class="fa fa-eye show_hide_pass"></span>
+                    </div>
+                    <input type="password" name="password" class="form-control@if(($error = $__error->validation->has('password') && old('login_form'))) is-invalid@endif" placeholder="{{ trans('auth.field.password') }}">
+                    @if($error)
+                        <div class="invalid-feedback">
+                            <strong>{{ $__error->validation->first('password') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group col-lg-6">
+                    <button type="submit" class="btn btn-outline-light form-control submit_btn">{{ trans('header.login') }}</button>
+                </div>
+            </form>
+            <div class="login-popup-text-bottom text-center mb-3">
+                <a class="text-white cursor-pointer forgot-password-text">{{ trans('auth.login.forgot_password') }}</a>
+            </div>
+        </div>
+        {{--    end section login    --}}
+        {{--    start section forgot    --}}
+        <div class="section-forgot no-height@if(old('login_form') || !old('forgot_form')) d-none@endif">
+            <h4 class="form-title text-center">{{ trans('auth.forgot.title') }}</h4>
+            <form method="post" action="{{ route('reset_password') }}">
+                @csrf
+                <input type="hidden" name="forgot_form" value="1">
+                <div class="form-group col-lg-6">
+                    <input type="text" name="email" class="form-control@if(($error = $__error->validation->has('email') && old('forgot_form'))) is-invalid@endif" placeholder="{{ trans('auth.field.email') }}" value="{{ old('email') }}">
+                    @if($error)
+                        <div class="invalid-feedback">
+                            <strong>{{ $__error->validation->first('email') }}</strong>
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group col-lg-6">
+                    <button type="submit" class="btn btn-outline-light form-control submit_btn">{{ trans('auth.forgot.reset') }}</button>
+                </div>
+            </form>
+            <div class="login-popup-text-bottom text-center mb-3">
+                <a class="text-white text-white back-to-login-text cursor-pointer"><< {{ trans('auth.forgot.back_to_login') }}</a>
+            </div>
+        </div>
+        {{--    end section forgot    --}}
+    </div>
+</div>

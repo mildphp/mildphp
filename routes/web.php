@@ -11,25 +11,18 @@
 |
 */
 
-use Mild\Http\ServerRequest;
+
 use App\Http\Middleware\DocsRedirectToCurrentVersionMiddleware;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
-Route::post('/login', function (ServerRequest $request) {
-    $request->validate([
-        'email' => 'required|email|exists:users',
-        'password' => 'required'
-    ]);
-})->name('login');
-
+Route::get('/', 'WelcomeController.index')->name('welcome');
+Route::post('/login', 'AuthController.login')->name('login');
+Route::put('/logout', 'AuthController.logout')->name('logout');
+Route::prefix('/forgot')->group(function ($route) {
+    $route->get('/', 'AuthController.resetPassword')->name('reset_password.token');
+    $route->put('/', 'AuthController.resetPasswordAction')->name('reset_password.action');
+    $route->post('/', 'AuthController.reset')->name('reset_password');
+});
 Route::prefix('/docs/{version?}')->middleware(DocsRedirectToCurrentVersionMiddleware::class)->group(function ($route) {
-    $route->get('/', function () {
-        return view('docs.index');
-    })->name('docs');
-    $route->get('{package}', function () {
-        return view('docs.detail');
-    })->name('docs.detail');
+    $route->get('/', 'DocsController.index')->name('docs');
+    $route->get('{package}', 'DocsController.show')->name('docs.detail');
 });

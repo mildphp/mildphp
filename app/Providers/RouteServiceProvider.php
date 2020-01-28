@@ -10,6 +10,7 @@ use Mild\Http\ValidatePostSizeMiddleware;
 use App\Http\Middleware\CsrfTokenMiddleware;
 use Mild\View\ShareErrorsFromFlashMiddleware;
 use App\Http\Middleware\LocalizationMiddleware;
+use App\Http\Middleware\ShareVariableToViewMiddleware;
 use Mild\Routing\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
@@ -30,6 +31,7 @@ class RouteServiceProvider extends ServiceProvider
         ValidatePostSizeMiddleware::class,
         CsrfTokenMiddleware::class,
         ShareErrorsFromFlashMiddleware::class,
+        ShareVariableToViewMiddleware::class,
         LocalizationMiddleware::class
     ];
 

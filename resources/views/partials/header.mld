@@ -3,8 +3,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container navbar-container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="{{ url()->getUri() }}"><h1 class="notranslate
-">Mild</h1></a>
+                <a class="navbar-brand logo_h" href="{{ url()->getUri() }}"><h1 class="notranslate">{{ app()->getName() }}</h1></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -19,11 +18,27 @@
                         <li class="nav-item"><a class="nav-link" href="contact.html">{{ trans('header.contact') }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/mildphp/mild">{{ trans('header.repository') }}</a></li>
                         <li class="nav-item" data-active="documentation"><a class="nav-link" href="{{ route('docs', $version->name) }}">{{ trans('header.documentation') }}</a></li>
-                        <li class="mobile-only nav-item"><a class="nav-link login-popup-link cursor-pointer">{{ trans('header.login') }}</a></li>
+                        @if($user)
+                            <li class="mobile-only nav-item"><a onclick="jQuery('#logout_form').submit()" class="nav-link cursor-pointer">{{ trans('header.logout') }}</a></li>
+                        @else
+                            <li class="mobile-only nav-item"><a class="nav-link login-popup-link cursor-pointer">{{ trans('header.login') }}</a></li>
+                        @endif
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a class="primary_btn login-popup-link">{{ trans('header.login') }}</a></li>
+                        @if($user)
+                            <li class="nav-item">
+                                <a onclick="jQuery('#logout_form').submit()" class="primary_btn">{{ trans('header.logout') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item"><a class="primary_btn login-popup-link">{{ trans('header.login') }}</a></li>
+                        @endif
                     </ul>
+                    @if($user)
+                        <form id="logout_form" action="{{ route('logout') }}" method="post">
+                            @csrf
+                            @method('PUT')
+                        </form>
+                    @endif
                 </div>
             </div>
         </nav>

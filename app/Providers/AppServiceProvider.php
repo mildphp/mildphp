@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Version;
 use Mild\Support\ServiceProvider;
-use Mild\Support\Facades\ViewVariable;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        ViewVariable::set('version', Version::current());
+        //
     }
 }

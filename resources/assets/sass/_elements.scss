@@ -1543,6 +1543,12 @@ h6 {
   .container {
     position: relative;
     top: 15%;
+    height: 85%;
+    .login-popup-text-bottom {
+      position: absolute;
+      width: 95%;
+      bottom: 0;
+    }
     h4.form-title {
       font-family: 'Shrikhand', cursive;
       color: #fff;
